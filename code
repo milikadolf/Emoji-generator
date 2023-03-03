@@ -1,0 +1,12 @@
+async function fetchEmoji() {
+  const response = await fetch("https://api.emojidex.com/rand");
+  const data = await response.json();
+  return data.code;
+}
+This function uses the fetch() function to make a request to the Emoji API and await the response. Then it parses the response as JSON using response.json(). Finally, it returns a random emoji code from the API response.
+
+Note that this function is an async function, which means it returns a Promise that resolves with the emoji code. To use this function, you can call it like this:
+
+fetchEmoji().then(emojiCode => {
+  console.log(`Random emoji code: ${emojiCode}`);
+});
